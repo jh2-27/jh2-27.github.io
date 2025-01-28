@@ -100,11 +100,26 @@
     <header>
       <h1>Mozilla</h1>
       <!--mozilla logo here-->
+      <img
+        srcset="firefox-logo-only-RGB-120w.png, firefox-logo-only-RGB-400w.png"
+        alt="Firefox logo"
+      />
     </header>
 
     <main>
       <article>
         <!--video here-->
+        <iframe
+          width="400"
+          height="220"
+          src="https://www.youtube.com/embed/ojcNcvb1olg"
+          title="Choose Independent - Choose Firefox"
+          frameborder="0"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+          referrerpolicy="strict-origin-when-cross-origin"
+          allowfullscreen>
+        </iframe>
+
         <h2>Rocking the free web</h2>
 
         <p>Mozilla are a global community of technologists, thinkers, and builders, working together to keep the Internet alive and accessible, so people worldwide can be informed contributors and creators of the Web. We believe this act of human collaboration across an open platform is essential to individual growth and our collective future.</p>
@@ -115,34 +130,31 @@
       <div class="further-info">
         <!-- insert images with srcsets and sizes -->
         <a href="https://www.mozilla.org/en-US/firefox/new/">
-          <picture>
-            <source
-              media="(max-width: 600px)"
-              srcset="firefox-logo-only-RGB-120w.png" />
             <img
-              src="firefox-logo-only-RGB-400w.png"
-              alt="a red panda" />
-          </picture>
+              srcset="firefox-logo-only-RGB-120w.png 120w,
+                      firefox-logo-only-RGB-400w.png 400w"
+              sizes ="(max-width: 600px) 120w,
+                      400px"
+              alt="Firefox homepage"
+            />
         </a>
         <a href="https://www.mozilla.org/">
-          <picture>
-            <source
-              media="(max-width: 600px)"
-              srcset="mozilla-dinosaur-head-120w.png" />
-            <img
-              src="mozilla-dinosaur-head-400w.png"
-              alt="Mozilla - Internet for people, not profit (US)" />
-          </picture>
+          <img
+              srcset="mozilla-dinosaur-head-120w.png 120w,
+                      mozilla-dinosaur-head-400w.png 400w"
+              sizes ="(max-width: 600px) 120w,
+                      400px"
+              alt="Mozilla homepage"
+            />
         </a>
         <a href="https://addons.mozilla.org/">
-          <picture>
-            <source
-              media="(max-width: 600px)"
-              srcset="firefox-addons-120w.jpg" />
-            <img
-              src="firefox-addons-400w.jpg"
-              alt="Add-ons for Firefox (en-US)" />
-          </picture>
+          <img
+              srcset="firefox-add-ons-120w.jpg 120w,
+                      firefox-add-ons-400w.jpg 400w"
+              sizes ="(max-width: 600px) 120w,
+                      400px"
+              alt="Firefox add-ons"
+            />
         </a>
         <a href="https://developer.mozilla.org/en-US/">
           <img
