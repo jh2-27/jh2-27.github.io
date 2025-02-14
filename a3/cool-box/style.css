@@ -1,5 +1,12 @@
 html {
     font-family: sans-serif;
   }
-  
-  /* Your CSS below here */
+
+/* Determined the font-size in rem by trial and error */
+div {
+  width: 200px;
+  height: 200px;
+  margin: auto;
+  text-align: center;
+  font-size: 1.2rem;
+}
