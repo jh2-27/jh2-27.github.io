@@ -93,3 +93,27 @@ body{
 section h2+p{
   text-indent: 40px;
 }
+
+/*Link states styling*/
+a:link{
+  color:#a66;
+  outline: none;
+}
+a:visited{
+  color: #a99;
+}
+a:hover{
+  color: #a11;
+}
+a:focus{
+  color: #a77;
+}
+
+a:hover,a:focus{
+  text-decoration: none;
+}
+
+a:active{
+  background-color: #a99;
+  color:rgb(255,83,83);
+}
