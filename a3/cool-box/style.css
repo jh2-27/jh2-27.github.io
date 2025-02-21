@@ -25,7 +25,10 @@ div {
   border-style: solid;
   border-radius: 5%;
 
-
+  /*box shadow*/
+  box-shadow: 2px 2px 2px black,
+              inset 2px 2px 2px rgba(255,255,255,0.5),
+              inset -2px -2px 2px rgba(0,0,0,0.5);;
   /*aligns the text in the center*/
   text-align: center;
   /*aligning the text vertically*/
