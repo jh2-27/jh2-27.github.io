@@ -43,3 +43,53 @@ header, footer {
 }
 
 /* WRITE YOUR CODE BELOW HERE */
+/*Font face code for fonts*/
+@font-face {
+  font-family: 'Afta sans';
+  src: url('fonts/Aftasans.woff2') format('woff2'),
+      url('fonts/Aftasans.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'FreeSerif';
+  src: url('fonts/FreeSerif.woff2') format('woff2'),
+      url('fonts/FreeSerif.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+html{
+  font-family: 'Afta sans';
+  font-size: 10px;
+}
+
+/*header format*/
+h1, h2{
+  font-family: 'FreeSerif';
+  letter-spacing: 1px;
+}
+
+/*header sizes*/
+h1{
+  font-size: 3rem;
+  text-align: center;
+}
+
+h2{
+  font-size: 3rem;
+}
+
+/*Body text formatting*/
+body{
+  letter-spacing: 1px;
+  word-spacing: 2px;
+}
+
+/*indent first paragraph after h2 in section*/
+section h2+p{
+  text-indent: 40px;
+}
