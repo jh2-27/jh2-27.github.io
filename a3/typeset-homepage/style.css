@@ -2,6 +2,7 @@
 
 * {
   box-sizing: border-box;
+  margin: 0;
 }
 
 body {
@@ -116,4 +117,46 @@ a:hover,a:focus{
 a:active{
   background-color: #a99;
   color:rgb(255,83,83);
+}
+
+/*List styling*/
+li{
+  line-height: 1.5rem;
+}
+
+ul,ol{
+  margin: 1em 0;
+}
+
+ul{
+  list-style-type: circle;
+}
+
+ol{
+  list-style-type:lower-roman;
+}
+
+nav {
+  padding-top: 0;
+  margin-top: 0;
+}
+
+body > nav > ul > li {
+  list-style: none;
+  border-width: 1px;
+  border-color: #a11;
+  border-style: solid;
+  padding: 1em 1em 1em 1em;
+  margin-bottom: 2em;
+  text-align: center;
+}
+
+body > nav > ul {
+  padding: 0;
+}
+
+
+body > nav > ul > li > a {
+  text-decoration: none;
+  font-size: 2rem;
 }
