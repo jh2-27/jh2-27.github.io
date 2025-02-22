@@ -7,7 +7,6 @@ body {
 
   img {
       max-width: 100%;
-      display: block;
   }
   
   .logo {
@@ -21,6 +20,9 @@ body {
     margin: 0 auto;
     padding: 0 20px;
     max-width: 980px;
+    /*display article and aside as 2 col table*/
+    display: grid;
+    grid-template-columns: 2fr 1fr;
   }
   
   nav {
@@ -44,8 +46,16 @@ body {
     list-style: none;
     margin: 0;
     padding: 0;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+  }
+
+  ul.photos li {
+    margin: 1px;
   }
 
   .feature {
       width: 200px;
+      float: left;
+      margin: 0 1rem 1rem 0;
   }
