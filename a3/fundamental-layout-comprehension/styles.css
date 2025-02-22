@@ -1,3 +1,10 @@
+/*
+    Name: Javidan Hasanzade
+    File: style.css
+    Date last modified: 21 February 2025
+    Description: Fundamental layout comprehension styling
+*/
+
 body {
     background-color: #fff;
     color: #333;
@@ -28,12 +35,19 @@ body {
   nav {
     background-color: #000;
     padding: .5em;
+    /*stays on page when scrolling down: */
+    position: sticky;
   }
   
   nav ul {
+    width: 60%;
     margin: 0;
     padding: 0;
     list-style: none;
+    /*display in 1 row with space between elements: */
+    display: flex;
+    margin: auto;
+    justify-content: space-between;
   }
   
   nav a {
@@ -44,18 +58,24 @@ body {
   
   .photos {
     list-style: none;
-    margin: 0;
     padding: 0;
+    /*display in a grid of 2 equal weighted cols: */
     display: grid;
     grid-template-columns: 1fr 1fr;
   }
 
-  ul.photos li {
-    margin: 1px;
+  ul.photos li{
+    margin: 0 2px 2px 0;
+    padding: 0;
+  }
+
+  ul.photos li img{
+    display: block;
   }
 
   .feature {
       width: 200px;
       float: left;
       margin: 0 1rem 1rem 0;
+      display: block;
   }
