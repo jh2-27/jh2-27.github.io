@@ -36,4 +36,12 @@ class Ball {
     this.color = color;
     this.size = size;
   }
+
+  //draw() draws the ball on given context
+  draw() {
+    ctx.beginPath();
+    ctx.fillStyle = this.color;
+    ctx.arc(this.x, this.y, this.size, 0, 2 * Math.PI);
+    ctx.fill();
+  }
 }
