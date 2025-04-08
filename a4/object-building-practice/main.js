@@ -1,3 +1,8 @@
+//Name: Javidan Hasanzade
+//File: main.js
+//Date: April 7, 2025
+//Object building practice script file
+
 // setup canvas
 
 const canvas = document.querySelector("canvas");

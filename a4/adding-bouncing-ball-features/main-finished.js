@@ -1,3 +1,8 @@
+//Name: Javidan Hasanzade
+//File: main.js
+//Date: April 7, 2025
+//Bouncing balls script file
+
 // set up canvas
 
 const canvas = document.querySelector("canvas");
