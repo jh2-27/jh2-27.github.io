@@ -31,17 +31,34 @@ randomize.addEventListener('click', result);
 
 function result() {
 
+    //newStory will be the random story after modification
+    let newStory = storyText;
+
+    //Getting randomized inserts for placeholders
+    const xItem = randomValueFromArray(insertX);
+    const yItem = randomValueFromArray(insertY);
+    const zItem = randomValueFromArray(insertZ);
+
+    //Adding the inserts to the placeholders in the story
+    newStory = newStory.replaceAll(':insertx:',xItem);
+    newStory = newStory.replaceAll(':inserty:',yItem);
+    newStory = newStory.replaceAll(':insertz:',zItem);
+
     if(customName.value !== '') {
       const name = customName.value;
-  
+      //Adding custom name after verifying it exists
+      newStory = newStory.replaceAll('Bob', name);
     }
   
     if(document.getElementById("uk").checked) {
       const weight = Math.round(300);
       const temperature =  Math.round(94);
-  
+      //Adjusting units to UK units
+      newStory = newStory.replaceAll('94 fahrenheit', temperature);
+      newStory = newStory.replaceAll('300 pounds', weight);
     }
-  
-    story.textContent = ;
+    
+    //Updating story content in html
+    story.textContent = newStory;
     story.style.visibility = 'visible';
   }
