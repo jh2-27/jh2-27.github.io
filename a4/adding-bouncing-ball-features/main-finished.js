@@ -23,14 +23,29 @@ function randomRGB() {
   return `rgb(${random(0, 255)},${random(0, 255)},${random(0, 255)})`;
 }
 
-class Ball {
-  constructor(x, y, velX, velY, color, size) {
+//Shape parent class
+class Shape {
+
+  constructor(x, y, velX, velY) {
     this.x = x;
     this.y = y;
     this.velX = velX;
     this.velY = velY;
+  }
+
+}
+
+//Ball child classs
+class Ball extends Shape {
+
+  constructor(x, y, velX, velY, color, size) {
+    //calling parent constructor
+    super(x,y,velX,velY);
+
+    //Setting rest of the fields
     this.color = color;
     this.size = size;
+    this.exists = true;
   }
 
   draw() {
@@ -63,7 +78,7 @@ class Ball {
 
   collisionDetect() {
     for (const ball of balls) {
-      if (!(this === ball)) {
+      if (!(this === ball) && ball.exists) {
         const dx = this.x - ball.x;
         const dy = this.y - ball.y;
         const distance = Math.sqrt(dx * dx + dy * dy);
@@ -74,6 +89,75 @@ class Ball {
       }
     }
   }
+}
+
+//EvilCircle class eats balls
+class EvilCircle extends Shape{
+
+  constructor(x, y){
+
+    //hardcoded velocities
+    const velX = 20;
+    const velY = 20;
+
+    //calling parent constructor
+    super(x,y,velX,velY);
+
+    //setting color and size
+    this.color = "white";
+    this.size = 10;
+    
+    //Adding controls (wasd) to evil ball
+    window.addEventListener('keydown', (e) => {
+      switch(e.key) {
+        case 'a':
+          this.x -= this.velX;
+          break;
+        case 'd':
+          this.x += this.velX;
+          break;
+        case 'w':
+          this.y -= this.velY;
+          break;
+        case 's':
+          this.y += this.velY;
+          break;
+      }
+    });
+
+  }
+
+  //Draw method
+  draw() {
+    ctx.beginPath();
+    //Adding outline color instead of fill:
+    ctx.strokeStyle = this.color;
+    ctx.lineWidth = 3;
+    ctx.arc(this.x, this.y, this.size, 0, 2 * Math.PI);
+    ctx.stroke();
+  }
+
+  //Makes sure evil circle is within context
+  checkBounds() {
+    if ((this.x + this.size) >= width) {
+      this.x -= this.size;
+    }
+
+    if ((this.x - this.size) <= 0) {
+      this.x += this.size;
+    }
+
+    if ((this.y + this.size) >= height) {
+      this.y -= this.size;
+    }
+
+    if ((this.y - this.size) <= 0) {
+      this.y += this.size;
+    }
+  }
+
+  
+
 }
 
 const balls = [];
