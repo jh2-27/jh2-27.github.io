@@ -141,7 +141,8 @@ class EvilCircle extends Shape{
     ctx.stroke();
   }
 
-  //Makes sure evil circle is within context
+  //Makes sure evil circle is within context by checking bounds and
+  //adjusting the x,y values
   checkBounds() {
     if ((this.x + this.size) >= width) {
       this.x -= this.size;
@@ -160,30 +161,44 @@ class EvilCircle extends Shape{
     }
   }
 
+  //Collision detection
+  //Checks if the ball collides with evil ball
+  //Removes the ball and updates count if they collide
   collisionDetect() {
     for (const ball of balls) {
-      if (ball.exists) {
-        const dx = this.x - ball.x;
-        const dy = this.y - ball.y;
+      const currentBall = ball;
+      if (currentBall.exists) { //Ball exists, getting position
+        const dx = this.x - currentBall.x;
+        const dy = this.y - currentBall.y;
         const distance = Math.sqrt(dx * dx + dy * dy);
 
-        if (distance < this.size + ball.size) { //Collision detected if true
+        //Checking for collision
+        if (distance < this.size + currentBall.size) { //Collision detected if true
 
           //Ball exists set to false
-          ball.exists = false;
+          currentBall.exists = false;
+
+          //finding index of the ball that just collided
+          const indexToRemove = balls.findIndex(ball => ball === currentBall);
+
+          //removing the ball from that index:
+          balls.splice(indexToRemove, 1);
 
           //ball count decreased
           count--;
           countLabel.textContent = 'Ball count: ' + count;
         }
       }
+      
     }
   }
 
 }
 
+//Balls array
 const balls = [];
 
+//Populating balls array
 while (balls.length < 25) {
   const size = random(10, 20);
   const ball = new Ball(
@@ -191,14 +206,21 @@ while (balls.length < 25) {
     // away from the edge of the canvas, to avoid drawing errors
     random(0 + size, width - size),
     random(0 + size, height - size),
-    random(-7, 7),
-    random(-7, 7),
+    random(-1,1),
+    random(-1,1),
     randomRGB(),
     size
   );
 
   balls.push(ball);
+  
+  //Updating ball count and counter:
+  count++;
+  countLabel.textContent = `Ball count: ${count}`;
 }
+
+//Creating evil ball on the top left of the context frame
+const evilBall = new EvilCircle(0, 0);
 
 function loop() {
   ctx.fillStyle = "rgba(0, 0, 0, 0.25)";
@@ -209,6 +231,11 @@ function loop() {
     ball.update();
     ball.collisionDetect();
   }
+
+  //Updating evil ball:
+  evilBall.draw();
+  evilBall.checkBounds();
+  evilBall.collisionDetect();
 
   requestAnimationFrame(loop);
 }
