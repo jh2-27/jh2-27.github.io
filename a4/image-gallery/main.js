@@ -39,3 +39,20 @@ for (const image of image_list) {
 // thumbBar.appendChild(newImage);
 
 /* Wiring up the Darken/Lighten button */
+btn.addEventListener('click', () => {
+    //Getting class value of btn
+    const btn_class = btn.getAttribute('class');
+    if (btn_class === 'dark') { //btn class is dark
+      //updating button to lighten
+      btn.setAttribute('class','light');
+      btn.textContent = 'Lighten';
+      //applying a darker overlay
+      overlay.style.backgroundColor = 'rgba(0,0,0,0.5)';
+    } else { //btn class is light
+      //updating button to dark
+      btn.setAttribute('class','dark');
+      btn.textContent = 'Darken';
+      //applying a lighter overlay
+      overlay.style.backgroundColor = 'rgba(0,0,0,0)';
+    }
+  });
