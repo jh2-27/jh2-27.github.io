@@ -107,21 +107,31 @@ a:link{
   color:#a66;
   outline: none;
 }
+
 a:visited{
   color: #a99;
 }
+
 a:hover{
   color: #a11;
 }
+
 a:focus{
   color: #a77;
 }
+
 a[href^='http'] {
   /* Styles for external links */
   padding-right: 19px;
-  background: url('external-link-52.png') no-repeat 100% 0 !important;
+}
+
+a[href^='http']::after {
+  /* Styles for external links */
+  padding-right: 19px;
+  background: url('external-link-52.png') no-repeat 100% 0;
   background-size: 16px 16px;
 }
+
 a:hover,a:focus{
   text-decoration: none;
 }
