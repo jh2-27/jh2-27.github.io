@@ -51,8 +51,10 @@ function result() {
     }
   
     if(document.getElementById("uk").checked) {
-      const weight = Math.round(300);
-      const temperature =  Math.round(94);
+      //1 pound = 0.0714286 stones
+      const stones_per_pound = 0.0714286;
+      const weight = `${Math.round(300*stones_per_pound)} stone`;
+      const temperature =  `${Math.round((94-32) * 5 / 9)} centigrade`;
       //Adjusting units to UK units
       newStory = newStory.replaceAll('94 fahrenheit', temperature);
       newStory = newStory.replaceAll('300 pounds', weight);
