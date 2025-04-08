@@ -22,3 +22,18 @@ function random(min, max) {
 function randomRGB() {
   return `rgb(${random(0, 255)},${random(0, 255)},${random(0, 255)})`;
 }
+
+//Ball class
+class Ball {
+  constructor(x, y, velX, velY, color, size) {
+    //Coordinates
+    this.x = x;
+    this.y = y;
+    //Velocity (horizontal, vertical)
+    this.velX = velX;
+    this.velY = velY;
+    //Appearance
+    this.color = color;
+    this.size = size;
+  }
+}
