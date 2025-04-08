@@ -26,3 +26,22 @@ const insertZ = ['spontaneously combusted', 'melted into a puddle on the sidewal
 //runs result() when button is clicked
 randomize.addEventListener('click', result);
 
+//result() gets one random element each from insertX, insertY, insertZ and adds it to the placeholders in the storyText
+//updates the html with new story
+
+function result() {
+
+    if(customName.value !== '') {
+      const name = customName.value;
+  
+    }
+  
+    if(document.getElementById("uk").checked) {
+      const weight = Math.round(300);
+      const temperature =  Math.round(94);
+  
+    }
+  
+    story.textContent = ;
+    story.style.visibility = 'visible';
+  }
