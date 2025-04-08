@@ -25,6 +25,7 @@ function randomRGB() {
 
 //Ball class
 class Ball {
+
   constructor(x, y, velX, velY, color, size) {
     //Coordinates
     this.x = x;
@@ -71,6 +72,7 @@ class Ball {
 
   //Collision detection
   //Checks if the ball collides with any other ball
+  //Updates the balls to a random color if they collide
   collisionDetect() {
     for (const ball of balls) {
       if (this !== ball) {
@@ -85,7 +87,7 @@ class Ball {
     }
   }
 
-}
+} //End of Balls class
 
 //Array for keeping track of balls
 const balls = [];
