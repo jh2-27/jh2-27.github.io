@@ -1,3 +1,8 @@
+//Name: Javidan Hasanzade
+//File: main.js
+//Date: April 13, 2025
+//Wildlife website script file
+
 // functionality for showing/hiding the comments section
 
 const showHideBtn = document.querySelector('.show-hide');
